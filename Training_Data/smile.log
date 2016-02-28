@@ -1,64 +1,71 @@
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (MSG) [2] in SMILExtract : openSMILE starting!
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (MSG) [2] in SMILExtract : config file is: /home/aditya/CCBD_Sound_Internship/openSMILE-2.1.0/bin/linux_x64_standalone_static/MFCC12_E_D_A.conf
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (MSG) [2] in cComponentManager : successfully registered 95 component types.
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'printDefaultClassDummyAttribute' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'frameTime' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'timestamp' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'frameIndex' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'number' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'frameLength' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'relation' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'instanceBase' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'instanceName' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'class' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'target' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'instanceNameFromMetadata' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'useTargetsFromMetadata' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : non-existant field 'frameTimeAdd' (-1)
-[ 28.02.2016 - 12:48:52 ]
+[ 28.02.2016 - 19:46:20 ]
     (WARN) [2] in configManager : ConfigInstance::getValue : index -1 out of bounds (0-9)
-[ 28.02.2016 - 12:48:52 ]
-    (ERROR) [1] in cWaveSource : failed reading wave header from file '/home/aditya/Desktop/small_dataset/bell/5.wav'! Maybe this is not a WAVE file?
+[ 28.02.2016 - 19:46:20 ]
+    (MSG) [2] in instance 'htkout' : writing ARFF header (39 features)...
+[ 28.02.2016 - 19:46:20 ]
+    (MSG) [2] in cComponentManager : successfully finished createInstances
+                                 (13 component instances were finalised, 1 data memories were finalised)
+[ 28.02.2016 - 19:46:20 ]
+    (MSG) [2] in cComponentManager : starting single thread processing loop
+[ 28.02.2016 - 19:46:20 ]
+    (MSG) [2] in cComponentManager : Processing finished! System ran for 712 ticks.
