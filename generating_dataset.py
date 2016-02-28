@@ -104,6 +104,7 @@ def load_data():
 	list_nominal = []		# Output neuron value in the Neural Network
 	list_instances = []		# Number of instances in final.arff files
 	list_finals = []		# final.arff files for all the directories
+	dic = {}				# Mapping between the nominal value and the type of sound
 
 	number_dirs = int(input("Enter the number of sound sources for training : "))
 	for i in range(number_dirs):
@@ -115,6 +116,7 @@ def load_data():
 		list_sound_types.append(sound_type)	# Hardcode all the sound types
 		list_nominal.append(nominal_value) 	# Output neuron value in Neural Network
 		list_arff.append(WRITE_DIR+"/"+sound_type+"_output")
+		dic[nominal_value] = sound_type
 
 		# Make the output directory -> stores all the arff files
 		os.system("mkdir " + WRITE_DIR+"/"+sound_type+"_output")
@@ -160,6 +162,8 @@ def load_data():
 
 		print("Done generating Datasets for training")
 
+	# Pickle the contents of the dictionary to be loaded in the neural network file
+	pickle.dump(dic, open(WRITE_DIR+"/"+"nominal_sound_mapping.pkl", "wb"))
 
 	# Merge the contents of all the final.arff files (for all the directories)
 	os.system("mkdir " + WRITE_DIR+"/final")		# Contains the merged final file
@@ -185,5 +189,5 @@ def load_data():
 
 	# return training_data
 
-	# Pickle training_data for later use in testing
+	# Pickle training_data for later use in Neural Networks
 	pickle.dump(training_data, open(WRITE_DIR+"/"+"training_data.pkl", "wb"))
