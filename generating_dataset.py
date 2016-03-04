@@ -92,9 +92,59 @@ def create_output(list_instances, list_nominal):
 		i += 1
 	return num_arr
 
+# Loads training data in the mnist format
+def load_new_data(training_data, num):
+	training_inputs = [np.reshape(x, (39, 1)) for x in training_data[0]]
+	training_results = [vectorized_result(y, num) for y in training_data[1]]
+	new_training_data = zip(training_inputs, training_results)
+	
+	return new_training_data
+
+def vectorized_result(j, num):
+	e = np.zeros((num, 1))
+	e[j] = 1.0
+	return e
+
 '''def merge_arff(files):
 	for file_name in files:
 		print(file_name)'''
+
+# Method to fetch the number of training instances of each class
+def fetch_training_instances(list_instances):
+	list_training = []
+	list_training[:] = list_instances
+	list_training[0] = 0
+	list_training[1:len(list_instances)+1] = list_instances
+	return list_training
+
+# Method to prepare the training data from the training instances
+def prepare_training_data(all_training_data, num_instances):
+	testing_data = []
+	# all_training_data[0:90/100*num_instances[1]] + all_training_data[num_instances[1]:num_instances[1]+90/100*num_instances[2]] ...
+	for i in range(1, len(num_instances)):
+		index1 = 0
+		index2 = 0
+		for j in range(0, i):
+			index1 += num_instances[j]
+			index2 += num_instances[j]
+		index2 += 90 * num_instances[i] / 100
+		testing_data += all_training_data[index1:index2]
+	return testing_data
+
+# Method to prepare the testing data from the training instances
+def prepare_testing_data(all_training_data, num_instances):
+	training_data = []
+	# all_training_data[90/100*num_instances[1]:num_instances[1]] + all_training_data[num_instances[1]+90/100*num_instances[2]:num_instances[1]+num_instances[2]]
+	for i in range(0, len(num_instances)):
+		# index1 = 0
+		index2 = 0
+		index1 = 90 * num_instances[i] / 100
+		for j in range(0, i+1):
+			index1 += num_instances[j]
+			index2 += num_instances[j]
+		index1 -= num_instances[i]
+		training_data += all_training_data[index1:index2]
+	return training_data
 
 def load_data():
 	print("Neural Network Training")
@@ -187,7 +237,28 @@ def load_data():
 	# Training data is prepared in a similar format as the mnist dataset
 	training_data = (ndarray_input, ndarray_result)
 
-	# return training_data
+	# Convert the training_data in the mnist format
+	new_training_data = load_new_data(training_data, number_dirs)
+
+	# Partition the dataset into 90% training data and 10% testing dataset
+	training_percentage = 90	# Percentage of data used for training
+	testing_percentage = 10		# Percentage of data used for testing
+
+	# Fetch the instances of each class following a 0
+	# [0, num_instances1, num_instances2, ...]
+	training_instances = fetch_training_instances(list_instances)
+
+	model_training = prepare_training_data(new_training_data, training_instances)
+
+	# Prepare the testing_percentage for testing
+	model_testing = prepare_testing_data(new_training_data, list_instances)
+
+	# Pickle the training_data and testing_data for training/testing the Neural Networks
+	# Pickle the training dataset
+	pickle.dump(model_training, open(WRITE_DIR+"/"+"training_data.pkl", "wb"))
+
+	# Pickle the testing dataset
+	pickle.dump(model_testing, open(WRITE_DIR+"/"+"testing_data.pkl", "wb"))
 
 	# Pickle training_data for later use in Neural Networks
-	pickle.dump(training_data, open(WRITE_DIR+"/"+"training_data.pkl", "wb"))
+	pickle.dump(new_training_data, open(WRITE_DIR+"/"+"complete_dataset.pkl", "wb"))

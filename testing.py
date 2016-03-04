@@ -67,9 +67,24 @@ def create_output(num_instances, nominal_val):
 	num_arr = np.full(num_instances, nominal_val)
 	return num_arr
 
+# Method creates test_data in the mnist format
+def load_new_data(test_data):
+	test_inputs = [np.reshape(x, (39, 1)) for x in test_data[0]]
+	new_test_data = zip(test_inputs, test_data[1])
+
+	return new_test_data
+
+def vectorized_result(j, num):
+	# Helper method for load_data, to create a numpy array for the output
+	e = np.zeros((num, 1))
+	e[j] = 1.0
+	return e
+
 def load_testdata():
 	print("Neural Network Testing")
 	wav_file = input("Enter the path of the test wav file : ")
+	# nom_values = display_nominal_data()
+	display_nominal_data()
 	nominal_val = int(input("Enter the output neuron value : "))
 	string = OPENSMILE_DIR+"/SMILExtract -C " + OPENSMILE_DIR+"/MFCC12_E_D_A.conf -I " + wav_file + " -O " + WRITE_DIR + "/test.arff"
 	os.system(string)
@@ -93,6 +108,15 @@ def load_testdata():
 	testing_data = (ndarray_input, ndarray_result)
 
 	# return testing_data
+	new_testing_data = load_new_data(testing_data)
 
 	# Pickle the testing_data for later use in Neural Networks
-	pickle.dump(testing_data, open(TEST_DATASET+"/"+"testing_data.pkl", "wb"))
+	pickle.dump(new_testing_data, open(TEST_DATASET+"/"+"testing_data.pkl", "wb"))
+
+def display_nominal_data():
+	file_path = TEST_DATASET+"/"+"nominal_sound_mapping.pkl"
+	dic = pickle.load(open(file_path, 'rb'))
+
+	for key in dic:
+		print(key, dic[key])
+	# return dic
